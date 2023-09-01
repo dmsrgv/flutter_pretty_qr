@@ -47,14 +47,17 @@ class PrettyQrCodePainter extends CustomPainter {
         deletePixelCount = this._qrImage.typeNumber + 9;
       }
 
-      var imageSize = this.imageSize != null
-          ? Size(this.imageSize!, this.imageSize!)
+      var sizeImage = imageSize != null
+          ? Size(imageSize!, imageSize!)
           : Size(image!.width.toDouble(), image!.height.toDouble());
 
       var src = Alignment.center.inscribe(
-          imageSize,
-          Rect.fromLTWH(
-              0, 0, image!.width.toDouble(), image!.height.toDouble()));
+          sizeImage,
+          imageSize != null
+              ? Rect.fromLTWH(
+                  0, 0, imageSize!.toDouble(), imageSize!.toDouble())
+              : Rect.fromLTWH(
+                  0, 0, image!.width.toDouble(), image!.height.toDouble()));
 
       var dst = Alignment.center.inscribe(
           Size(size.height / 4, size.height / 4),
