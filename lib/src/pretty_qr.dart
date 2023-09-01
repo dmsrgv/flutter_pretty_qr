@@ -1,5 +1,4 @@
 import 'dart:async';
-import 'dart:ui';
 import 'dart:ui' as ui;
 
 import 'package:flutter/material.dart';
@@ -10,6 +9,9 @@ import 'pretty_qr_painter.dart';
 class PrettyQr extends StatefulWidget {
   ///Widget size
   final double size;
+
+  ///Image size
+  final double? imageSize;
 
   ///Qr code data
   final String data;
@@ -36,6 +38,7 @@ class PrettyQr extends StatefulWidget {
       this.errorCorrectLevel = QrErrorCorrectLevel.M,
       this.roundEdges = false,
       this.typeNumber,
+      this.imageSize,
       this.image})
       : super(key: key);
 
