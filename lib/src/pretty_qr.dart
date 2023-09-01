@@ -84,6 +84,7 @@ class _PrettyQrState extends State<PrettyQr> {
                     painter: PrettyQrCodePainter(
                         image: snapshot.data,
                         data: widget.data,
+                        imageSize: widget.imageSize,
                         errorCorrectLevel: widget.errorCorrectLevel,
                         elementColor: widget.elementColor,
                         roundEdges: widget.roundEdges,
